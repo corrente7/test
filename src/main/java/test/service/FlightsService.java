@@ -27,18 +27,18 @@ public class FlightsService {
             map.put("duration", flight.getDuration());
             map.put("flightStatus", WeatherService.getConditionsFrom(cityFrom, timeFrom));
             result.add(map);
-            }
+        }
         return result;
-        }
+    }
 
-        public static List<Map<String, Object>> getFlightStatusTo(List<Map<String, Object>> list) throws FileNotFoundException {
-                for (Map<String, Object> map : list) {
-                    if ((map.get("flightStatus")).equals(AS_PLANNED)) {
-                        int timeDifference = TimeDifference.checkTimeDifference((String) map.get("from"), (String) map.get("to"));
-                        int arrivalTime = (int)(map.get("departure")) + (int) map.get("duration") + timeDifference;
-                        map.replace("flightStatus", WeatherService.getConditionsFrom((String) map.get("to"), arrivalTime));
-                    }
-                }
-        return list;
+    public static List<Map<String, Object>> getFlightStatusTo(List<Map<String, Object>> list) throws FileNotFoundException {
+        for (Map<String, Object> map : list) {
+            if ((map.get("flightStatus")).equals(AS_PLANNED)) {
+                int timeDifference = TimeDifference.checkTimeDifference((String) map.get("from"), (String) map.get("to"));
+                int arrivalTime = (int) (map.get("departure")) + (int) map.get("duration") + timeDifference;
+                map.replace("flightStatus", WeatherService.getConditionsFrom((String) map.get("to"), arrivalTime));
+            }
         }
+        return list;
+    }
 }

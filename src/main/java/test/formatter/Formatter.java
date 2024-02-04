@@ -13,8 +13,8 @@ public class Formatter {
         for (Map<String, Object> map: list) {
             strResult.append(map.get("flight") + " | "
                             + map.get("from") + " -> "
-                            + map.get("to") + " | " + ((FlightStatus)map.get("flightStatus")).getName() + '\n');
-            }
-    return strResult.substring(0, strResult.length() - 1);
+                            + map.get("to") + " | " + ((FlightStatus) map.get("flightStatus")).getName() + '\n');
+        }
+        return strResult.substring(0, strResult.length() - 1);
     }
 }

@@ -12,7 +12,7 @@ public class TimeDifference {
     public static final int TIME_ZONE_OMS_MSK = -3;
     public static final int TIME_ZONE_NSK_MSK = -4;
 
-    public static int checkTimeDifference(String cityFrom, String cityTo){
+    public static int checkTimeDifference(String cityFrom, String cityTo) {
         int result = 0;
         if (Objects.equals(cityFrom, "novosibirsk") && Objects.equals(cityTo, "moscow"))
             result = TIME_ZONE_NSK_MSK;

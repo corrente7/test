@@ -2,14 +2,8 @@ package test;
 
 
 import test.formatter.Formatter;
-import test.model.*;
-import test.parser.Parser;
 import test.service.FlightsService;
-import test.service.WeatherService;
-
 import java.io.FileNotFoundException;
-
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
